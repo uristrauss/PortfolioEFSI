@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Trabajos from './Trabajos.json';
+import './Home.css';
 
 const Home = () => {
   const [trabajos, setTrabajos] = useState([]);
@@ -20,28 +21,50 @@ const Home = () => {
         </div>
 
         <div className="col-md-6" style={styles.imageContainer}>
-          <img
+        <img
             src={"urifotoreal.jpg"}
             className="card-img-top"
             alt=""
             style={{ height: '500px', width: '500px', objectFit: 'cover', borderRadius: '15px' }}
           />
         </div>
+
+
       </div>
 
-      <div className="row">
-        {limitar6.map(creacion => (
-          <div key={creacion.id} className="col-md-4 mb-3">
-            <div className="card" style={styles.card}>
-              <img src={creacion.imagen} className="card-img-top" alt={creacion.titulo} style={{ height: '200px', objectFit: 'cover', borderRadius: '10px' }} />
-              <div className="card-body">
-                <h5 className="card-title" style={styles.cardTitle}>{creacion.titulo}</h5>
-                <a href={creacion.url} className="btn btn-primary" style={styles.cardButton}>View more</a>
-              </div>
-            </div>
-          </div>
-        ))}
+      
+  <section class="loader">
+
+<div className="slider">
+</div>
+<div className="slider">
+</div>
+<div className="slider">
+</div>
+<div className="slider">
+</div>
+<div className="slider">
+</div>
+</section>
+
+
+<p>
+
+</p>
+
+<div className="row gx-6">
+  {limitar6.map(creacion => (
+    <div key={creacion.id} className="col-md-4">
+      <div className="card" style={styles.card}>
+        <img src={creacion.imagen} className="card-img-top" alt={creacion.titulo} style={{ height: '200px', objectFit: 'cover', borderRadius: '10px' }} />
+        <div className="card-body">
+          <h5 className="card-title" style={styles.cardTitle}>{creacion.titulo}</h5>
+          <a href={creacion.url} className="btn btn-primary" style={styles.cardButton}>View more</a>
+        </div>
       </div>
+    </div>
+  ))}
+</div>
     </div>
   );
 };
@@ -87,19 +110,22 @@ const styles = {
     alignItems: 'center',
   },
   card: {
-    margin: '10px',
+    margin: '30px', 
     boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
     borderRadius: '15px',
   },
   cardTitle: {
-    color: '#336699',
+    color: '#fff', 
     fontSize: '18px',
     fontWeight: 'bold',
   },
+  
   cardButton: {
-    background: '#336699',
+    background: '#610C9F',
     border: 'none',
+    color: '#fff', 
   },
+  
 };
 
 export default Home;
