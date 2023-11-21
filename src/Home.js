@@ -13,6 +13,8 @@ const Home = () => {
 
   return (
     <div className="container">
+
+
       <div className="row">
         <div style={styles.container}>
           <h3 style={styles.subtitle}>NASA Business Assessor Official</h3>
@@ -59,9 +61,9 @@ const Home = () => {
         <img src={creacion.imagen} className="card-img-top" alt={creacion.titulo} style={{ height: '200px', objectFit: 'cover', borderRadius: '10px' }} />
         <div className="card-body">
           <h5 className="card-title" style={styles.cardTitle}>{creacion.titulo}</h5>
-          <a href={creacion.url} className="btn btn-primary" style={styles.cardButton}>View more</a>
+          <a href={creacion.url} className="btn btn-primary" style={styles.cardButton}>Ver más</a>
         </div>
-      </div>
+      </div>  
     </div>
   ))}
 </div>
@@ -93,7 +95,7 @@ const styles = {
   },
   title: {
     marginBottom: '20px',
-    fontFamily: 'Georgia, serif', // Elegant font
+    fontFamily: 'Georgia, serif', 
     fontSize: '48px',
     fontWeight: 'bold',
     color: '#6929c7', 
