@@ -34,6 +34,7 @@
     width: 100px;
     object-fit: cover;
     border-radius: 15px;
+    margin-top: 10px;
   }
   
   .card::after {
