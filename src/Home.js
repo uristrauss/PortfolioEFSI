@@ -1,15 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Trabajos from './Trabajos.json';
 import './Home.css';
+import { MyContext } from './Favoritos';
 
 const Home = () => {
   const [trabajos, setTrabajos] = useState([]);
+  const { favoritos, setFavoritos } = useContext(MyContext);
 
   useEffect(() => {
     setTrabajos(Trabajos);
   });
 
+  
   const limitar6 = trabajos.slice(0, 6);
+
+  const chequearFavoritos = (trabajos) => {
+    //ya esta dentro de favoritos??
+    const esFavorito = favoritos.some((fav) => fav.id === trabajos.id)
+
+    if (esFavorito) {
+      //agregar el objeto a favoritos
+      const actualizarFavoritos = favoritos.filter((fav) => fav.id !== trabajos.id);
+      setFavoritos(actualizarFavoritos);
+    }
+    else {
+      //sacar el objeto de favoritos
+      setFavoritos([...favoritos, trabajos]);
+    }
+    }
+    
+    //guardar en el local storage
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    
 
   return (
     <div className="container">
@@ -66,7 +88,9 @@ const Home = () => {
             <a href={creacion.url} className="btn btn-primary" style={styles.cardButton}>
               Ver más
             </a>
-            <div className="heart-container" title="Like">
+
+
+            <div className="heart-container" title="Like" onClick={() => chequearFavoritos(creacion)}>
               <input type="checkbox" className="checkbox" id={`Give-It-An-Id-${creacion.id}`} />
               <div className="svg-container">
                 <svg viewBox="0 0 24 24" className="svg-outline" xmlns="http://www.w3.org/2000/svg">

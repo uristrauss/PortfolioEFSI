@@ -116,7 +116,7 @@
   }
   
   .card:hover::before {
-    transform: rotate(-180deg) scaleX(0.8) scaleY(1.1);
+    transform: rotate(-180deg) scaleX(1.02) scaleY(1.03);
   }
   
   .pyramid-loader {
@@ -190,9 +190,8 @@
     transform: rotateX(90deg) translateZ(-40px);
     filter: blur(12px);
   }
-
   .heart-container {
-    --heart-color: rgb(255, 91, 137);
+    --heart-color: rgb(189, 91, 255);
     position: relative;
     width: 50px;
     height: 50px;
