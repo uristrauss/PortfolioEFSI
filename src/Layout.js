@@ -18,7 +18,7 @@ function Layout({ children }) {
       <nav className="custom-navbar navbar navbar-expand-lg navbar-light">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          CATALOGO
+          PORTFOLIO
         </Link>
         <button
           className="navbar-toggler"
